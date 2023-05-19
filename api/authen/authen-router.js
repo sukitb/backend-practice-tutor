@@ -1,11 +1,10 @@
 const router = require('express').Router();
 const AuthenController = require('./authen-controller')
 
-router.post('/login', (req, res) => {
-    console.log(req.body)
-    res.send('hello login')
-})
+router.post('/login', AuthenController.login)
 
 router.post('/register', AuthenController.register)
+
+router.post('/validate_token', AuthenController.validateToken)
 
 module.exports = router
